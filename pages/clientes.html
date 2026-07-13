@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - Sistema de Ventas</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="../css/clientes.css" />
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom custom-navbar shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-dark" href="../index.html">
+                    <span class="text-primary"></span> Sistema de Ventas
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="inventario.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos.html">Registrar productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active fw-semibold text-primary" aria-current="page" href="clientes.html">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ventas.html">Ventas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reportes</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5 flex-grow-1">
+
+        <section class="mb-4 text-center text-md-start">
+            <h2 class="fw-bold text-dark">Gestión de Clientes</h2>
+            <p class="text-muted">Administra la información de tus clientes, agrega nuevos y mantén actualizados sus datos.</p>
+        </section>
+
+        <!-- Botón para agregar cliente -->
+        <section class="mb-4 text-end">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCliente">
+                <i class="bi bi-person-plus"></i> Nuevo Cliente
+            </button>
+        </section>
+
+        <!-- Tabla de clientes -->
+        <section class="card shadow-sm border-0 rounded-3 overflow-hidden bg-white">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th class="ps-4">ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>Fecha Registro</th>
+                            <th class="pe-4 text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-clientes">
+                        <!-- Los clientes se cargarán aquí mediante JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Modal para agregar/editar cliente -->
+        <div class="modal fade" id="modalCliente" tabindex="-1" aria-labelledby="modalClienteLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="modalClienteLabel">Nuevo Cliente</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formCliente">
+                            <input type="hidden" id="clienteId" value="">
+                            
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label fw-medium">Nombre completo</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej: Juan Pérez" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-medium">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="ejemplo@correo.com" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label fw-medium">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ej: 1234-5678" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="direccion" class="form-label fw-medium">Dirección</label>
+                                <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ej: Calle Principal #123" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="fechaRegistro" class="form-label fw-medium">Fecha de Registro</label>
+                                <input type="date" id="fechaRegistro" name="fechaRegistro" class="form-control" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="guardarCliente">Guardar Cliente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-auto text-center">
+        <div class="container">
+            <p class="mb-0 text-muted">&copy; 2026 Sistema de Ventas - Todos los derechos reservados.</p>
+            <p class="mb-0 text-muted">&copy; MissaelCorporations°</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/clientes.app.js"></script>
+</body>
+</html>
