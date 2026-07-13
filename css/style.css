@@ -64,4 +64,48 @@ body {
 
 .hero-content p.text-white-75 {
     color: rgba(255, 255, 255, 0.9);
-} 
+}
+
+.info-card,
+.feature-card,
+.section-alt {
+    border: 1px solid rgba(145, 158, 171, 0.18);
+    background-color: #ffffff;
+}
+
+.info-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-card:hover,
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card {
+    background: #f8f9fa;
+}
+
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    font-weight: 700;
+}
+
+@media (max-width: 991px) {
+    .hero-section {
+        min-height: 340px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-content {
+        text-align: center;
+    }
+}
+ 
