@@ -108,49 +108,81 @@ body {
     line-height: 1.6;
 }
 
-.card .btn {
-    padding: 0.5rem 1.5rem;
+.text-white-target {
+    color: #0dcaf0; 
 }
 
-.btn-primary {
-    background-color: var(--bs-accent);
-    border-color: #27484f;
+.hero-section {
+    position: relative;
+    min-height: 420px;
+    background-image: url('../img/retrato-cajera-sonriente_171337-2407.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
-    background-color: #27484f;
-    border-color: #203d43;
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
 }
 
-.footer {
-    margin-top: auto;
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
-.site-footer {
-    background-color: #f1f4f5;
-    color: #4b6166;
-    border-top: 1px solid #e6ecee;
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+.hero-content h1,
+.hero-content p {
+    color: #ffffff;
 }
 
-.site-footer small {
-    color: #65787b;
+.hero-content p.text-white-75 {
+    color: rgba(255, 255, 255, 0.9);
 }
 
-@media (max-width: 576px) {
-    .navbar-brand .fw-semibold {
-        font-size: 1rem;
+.info-card,
+.feature-card,
+.section-alt {
+    border: 1px solid rgba(145, 158, 171, 0.18);
+    background-color: #ffffff;
+}
+
+.info-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-card:hover,
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card {
+    background: #f8f9fa;
+}
+
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    font-weight: 700;
+}
+
+@media (max-width: 991px) {
+    .hero-section {
+        min-height: 340px;
     }
+}
 
-    .hero {
-        padding-top: 4rem !important;
-        padding-bottom: 4rem !important;
-    }
-
-    #productos {
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
+@media (max-width: 767px) {
+    .hero-content {
+        text-align: center;
     }
 }
+ 
