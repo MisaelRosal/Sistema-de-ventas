@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario de Productos</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="../css/inventario.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+        <div class="container">
+          <a class="navbar-brand fw-bold text-dark" href="../index.html">
+            <span class="text-primary"></span> Sistema de Ventas
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fw-semibold text-primary" aria-current="page" href="inventario.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="productos.html">Registrar productos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container py-5 flex-grow-1">
+        
+        <section class="mb-4 text-center text-md-start">
+            <h2 class="fw-bold text-dark">Gestione sus productos</h2>
+            <p class="text-muted">Aquí se encuentran todos los productos registrados hasta el momento en el sistema.</p>
+        </section>
+
+        <section class="card shadow-sm border-0 rounded-3 overflow-hidden bg-white">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th class="ps-4">Código de producto</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Categoría</th>
+                            <th>Cantidad</th>
+                            <th>Fecha de ingreso</th>
+                            <th class="pe-4 text-center">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-productos">
+                        <tr>
+                            <td class="ps-4 fw-semibold text-secondary">P001</td>
+                            <td class="fw-medium">Monitor Gamer 24"</td>
+                            <td>$249.99</td>
+                            <td><span class="badge bg-light text-dark border">Monitores</span></td>
+                            <td>15 unidades</td>
+                            <td>2026-07-03</td>
+                            <td class="pe-4 text-center"><span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Activo</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 fw-semibold text-secondary">P002</td>
+                            <td class="fw-medium">Teclado Mecánico RGB</td>
+                            <td>$85.00</td>
+                            <td><span class="badge bg-light text-dark border">Accesorios</span></td>
+                            <td>0 unidades</td>
+                            <td>2026-06-15</td>
+                            <td class="pe-4 text-center"><span class="badge bg-danger-subtle text-danger px-3 py-2 rounded-pill">Inactivo</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-auto text-center">
+      <div class="container">
+        <p class="mb-0 text-muted">&copy; 2026 Sistema de Ventas - Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<footer class="bg-dark text-light py-4 mt-auto text-center">
+      <div class="container">
+        <p class="mb-0 text-muted">&copy; 2026 Sistema de Ventas - Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>

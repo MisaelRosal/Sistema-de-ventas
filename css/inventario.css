@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.table thead th {
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: none;
+}
+
+.table tbody td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 0.95rem;
+    color: #495057;
+}
+
+.table .badge {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.table-hover tbody tr {
+    transition: background-color 0.15s ease-in-out;
+}
