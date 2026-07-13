@@ -7,19 +7,55 @@
 
 body {
     background-color: #f6f8f9;
+    color: #1f2933;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: #0f172a;
+    color: #e2e8f0;
 }
 
 :root {
     --bs-accent: #2f5564;
     --bs-muted: #6c7a7d;
+    --surface: #ffffff;
+    --surface-alt: #f8fafc;
+    --border-color: rgba(15, 23, 42, 0.08);
+    --text-color: #1f2933;
+    --text-muted: #64748b;
+}
+
+body.dark-mode {
+    --bs-accent: #5eead4;
+    --bs-muted: #cbd5e1;
+    --surface: #111827;
+    --surface-alt: #1f2937;
+    --border-color: rgba(255, 255, 255, 0.12);
+    --text-color: #f8fafc;
+    --text-muted: #e2e8f0;
+}
+
+body.dark-mode .text-muted,
+body.dark-mode .text-secondary {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .card .card-title,
+body.dark-mode .card .card-text,
+body.dark-mode .site-footer,
+body.dark-mode .site-footer small {
+    color: #f8fafc !important;
 }
 
 .navbar {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    background-color: var(--surface) !important;
+    color: var(--text-color);
 }
 
 .navbar-brand {
@@ -27,9 +63,24 @@ body {
 }
 
 .navbar .nav-link {
-    color: var(--bs-muted) !important;
+    color: var(--text-muted) !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: var(--bs-accent) !important;
+}
+
+.theme-toggle {
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.theme-toggle:hover {
+    background-color: var(--surface-alt);
+    color: var(--bs-accent);
 }
 
 .hero {
@@ -45,6 +96,7 @@ body {
 .hero .lead {
     margin-bottom: 0;
     line-height: 1.7;
+    color: var(--text-muted) !important;
 }
 
 .hero .mt-4 {
@@ -56,7 +108,8 @@ body {
 }
 
 .hero .card {
-    background: linear-gradient(180deg, #ffffff, #fbfdff);
+    background: linear-gradient(180deg, var(--surface), var(--surface-alt));
+    color: var(--text-color);
 }
 
 #productos {
@@ -70,8 +123,10 @@ body {
 }
 
 .card {
-    border: none;
+    border: 1px solid var(--border-color);
     border-radius: 12px;
+    background-color: var(--surface);
+    color: var(--text-color);
 }
 
 .card-body {
@@ -80,13 +135,14 @@ body {
 
 .card .card-title {
     font-weight: 700;
-    color: #2b4f56;
+    color: var(--text-color);
     margin-bottom: 0.85rem;
 }
 
 .card .card-text {
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    color: var(--text-muted);
 }
 
 .card .btn {
@@ -120,15 +176,15 @@ body {
 }
 
 .site-footer {
-    background-color: #f1f4f5;
-    color: #4b6166;
-    border-top: 1px solid #e6ecee;
+    background-color: var(--surface-alt);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
 }
 
 .site-footer small {
-    color: #65787b;
+    color: var(--text-muted);
 }
 
 .whatsapp-float {
