@@ -1,36 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+}
 
 body {
-    font-family: 'Inter', sans-serif;
+    background-color: #f6f8f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.custom-navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+:root {
+    --bs-accent: #2f5564;
+    --bs-muted: #6c7a7d;
 }
 
-.custom-navbar .nav-link {
-    font-weight: 500;
-    color: #555555;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-    transition: color 0.2s ease-in-out;
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
-.custom-navbar .nav-link:hover {
-    color: #0d6efd; 
+.navbar-brand {
+    margin-right: 2rem;
 }
 
-.custom-card {
+.navbar .nav-link {
+    color: var(--bs-muted) !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.hero {
+    background-color: transparent;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+.hero h2 {
+    margin-bottom: 1.5rem !important;
+}
+
+.hero .lead {
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.hero .mt-4 {
+    margin-top: 2.5rem !important;
+}
+
+.hero .btn {
+    padding: 0.65rem 1.5rem;
+}
+
+.hero .card {
+    background: linear-gradient(180deg, #ffffff, #fbfdff);
+}
+
+#productos {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+.row.g-4 {
+    --bs-gutter-y: 2rem;
+    --bs-gutter-x: 2rem;
+}
+
+.card {
+    border: none;
     border-radius: 12px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.custom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+.card-body {
+    padding: 2.25rem 1.75rem;
 }
 
-.text-white-target {
-    color: #0dcaf0; 
-} 
+.card .card-title {
+    font-weight: 700;
+    color: #2b4f56;
+    margin-bottom: 0.85rem;
+}
+
+.card .card-text {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.card .btn {
+    padding: 0.5rem 1.5rem;
+}
+
+.btn-primary {
+    background-color: var(--bs-accent);
+    border-color: #27484f;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #27484f;
+    border-color: #203d43;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.site-footer {
+    background-color: #f1f4f5;
+    color: #4b6166;
+    border-top: 1px solid #e6ecee;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.site-footer small {
+    color: #65787b;
+}
+
+@media (max-width: 576px) {
+    .navbar-brand .fw-semibold {
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    #productos {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+}
