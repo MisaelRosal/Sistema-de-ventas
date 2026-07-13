@@ -1,34 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+}
 
 body {
-    font-family: 'Inter', sans-serif;
+    background-color: #f6f8f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.custom-navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+:root {
+    --bs-accent: #2f5564;
+    --bs-muted: #6c7a7d;
 }
 
-.custom-navbar .nav-link {
-    font-weight: 500;
-    color: #555555;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-    transition: color 0.2s ease-in-out;
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
-.custom-navbar .nav-link:hover {
-    color: #0d6efd; 
+.navbar-brand {
+    margin-right: 2rem;
 }
 
-.custom-card {
+.navbar .nav-link {
+    color: var(--bs-muted) !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.hero {
+    background-image: 
+        linear-gradient(rgba(15, 32, 39, 0.75), rgba(32, 58, 67, 0.85)), 
+        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(1px);
+    z-index: 1;
+}
+
+.hero h2 {
+    margin-bottom: 1.5rem !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero .lead {
+    margin-bottom: 0;
+    line-height: 1.7;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero .mt-4 {
+    margin-top: 2.5rem !important;
+}
+
+.hero .btn {
+    padding: 0.65rem 1.5rem;
+}
+
+#productos {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+.row.g-4 {
+    --bs-gutter-y: 2rem;
+    --bs-gutter-x: 2rem;
+}
+
+.card {
+    border: none;
     border-radius: 12px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.custom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+.card-body {
+    padding: 2.25rem 1.75rem;
+}
+
+.card .card-title {
+    font-weight: 700;
+    color: #2b4f56;
+    margin-bottom: 0.85rem;
+}
+
+.card .card-text {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .text-white-target {
