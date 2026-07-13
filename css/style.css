@@ -47,7 +47,7 @@ body.dark-mode .text-secondary {
 body.dark-mode .card .card-title,
 body.dark-mode .card .card-text,
 body.dark-mode .site-footer,
-body.dark-mode .site-footer small {
+body.dark-mode .site-footer span {
     color: #f8fafc !important;
 }
 
@@ -179,11 +179,13 @@ body.dark-mode .site-footer small {
     background-color: var(--surface-alt);
     color: var(--text-muted);
     border-top: 1px solid var(--border-color);
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+    border-radius: 14px 14px 0 0;
+    margin-top: 1rem;
+    padding: 1.25rem 1.5rem;
+    font-size: 0.95rem;
 }
 
-.site-footer small {
+.site-footer span {
     color: var(--text-muted);
 }
 
@@ -225,5 +227,10 @@ body.dark-mode .site-footer small {
     #productos {
         padding-top: 3rem !important;
         padding-bottom: 3rem !important;
+    }
+
+    .site-footer {
+        text-align: center;
+        border-radius: 12px 12px 0 0;
     }
 }
