@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Venta - Sistema de Ventas</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/ventas.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom custom-navbar shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-dark" href="../index.html">
+                    Sistema de Ventas
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="inventario.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="productos.html">Registrar productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link active fw-semibold text-primary" aria-current="page" href="ventas.html">Ventas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5 flex-grow-1">
+        <section class="mb-4 text-center text-md-start">
+            <h2 class="fw-bold text-dark">Registrar Venta</h2>
+            <p class="text-muted">Selecciona el cliente, añade productos del inventario al carrito y procesa la venta.</p>
+        </section>
+
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <div class="card shadow-sm border-0 rounded-3 p-4 bg-white h-100">
+                    <h5 class="text-secondary border-bottom pb-2 mb-4 fw-semibold">Detalles de Venta</h5>
+                    
+                    <div class="mb-3">
+                        <label for="cliente" class="form-label fw-medium">Cliente</label>
+                        <select id="cliente" class="form-select">
+                            <option value="">Seleccione un cliente...</option>
+                            <option value="María García">María García</option>
+                            <option value="Carlos Rodríguez">Carlos Rodríguez</option>
+                            <option value="Ana Martínez">Ana Martínez</option>
+                            <option value="Cliente Mostrador">Cliente Mostrador</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="producto" class="form-label fw-medium">Producto</label>
+                        <select id="producto" class="form-select">
+                            <option value="" data-precio="0">Seleccione un producto...</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="cantidad" class="form-label fw-medium">Cantidad</label>
+                        <input type="number" id="cantidad" class="form-control" min="1" value="1">
+                    </div>
+
+                    <button id="btnAgregar" class="btn btn-outline-primary w-100 fw-medium">
+                        <i class="bi bi-cart-plus"></i> Agregar al carrito
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card shadow-sm border-0 rounded-3 p-4 bg-white h-100">
+                    <h5 class="text-secondary border-bottom pb-2 mb-4 fw-semibold">Carrito de Compras</h5>
+                    
+                    <div class="table-responsive flex-grow-1">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Cant.</th>
+                                    <th>Subtotal</th>
+                                    <th class="text-center">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="lista-carrito">
+                                </tbody>
+                        </table>
+                    </div>
+
+                    <div class="border-top pt-3 mt-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="fw-bold mb-0 text-dark">Total:</h4>
+                            <h4 class="fw-bold mb-0 text-success" id="totalVenta">$0.00</h4>
+                        </div>
+                        <button id="btnProcesar" class="btn btn-success w-100 py-2 fw-bold fs-5">
+                            <i class="bi bi-check-circle"></i> Procesar Venta
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-auto text-center">
+        <div class="container">
+            <p class="mb-0 text-muted">&copy; 2026 Sistema de Ventas - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/ventas.app.js"></script>
+</body>
+</html>
